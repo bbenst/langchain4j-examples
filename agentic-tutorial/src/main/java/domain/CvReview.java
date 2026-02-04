@@ -10,6 +10,7 @@ public class CvReview {
     public String feedback;
 
     public CvReview() {} // no args constructor needed for deserialization, bcs other constructor is present!
+    // 反序列化需要无参构造函数，因为已存在其他构造函数
 
     public CvReview(double score, String feedback) {
         this.score = score;

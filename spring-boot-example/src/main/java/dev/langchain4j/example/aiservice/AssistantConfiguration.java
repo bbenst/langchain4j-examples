@@ -17,6 +17,7 @@ public class AssistantConfiguration {
 
     /**
      * This chat memory will be used by {@link Assistant} and {@link StreamingAssistant}
+     * 该聊天内存将被 {@link Assistant} 和 {@link StreamingAssistant} 使用
      */
     @Bean
     @Scope(SCOPE_PROTOTYPE)
@@ -26,9 +27,13 @@ public class AssistantConfiguration {
 
     /**
      * This listener will be injected into every {@link ChatModel} and {@link StreamingChatModel}
+     * 该监听器会被注入到每个 {@link ChatModel} 和 {@link StreamingChatModel}
      * bean   found in the application context.
+     * 在应用上下文中找到的 bean。
      * It will listen for {@link ChatModel} in the {@link ChatModelController} as well as
+     * 它会监听 {@link ChatModelController} 中的 {@link ChatModel}，以及
      * {@link Assistant} and {@link StreamingAssistant}.
+     * {@link Assistant} 和 {@link StreamingAssistant}。
      */
     @Bean
     ChatModelListener chatModelListener() {

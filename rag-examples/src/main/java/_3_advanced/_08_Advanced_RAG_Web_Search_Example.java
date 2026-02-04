@@ -39,12 +39,16 @@ public class _08_Advanced_RAG_Web_Search_Example {
 
     /**
      * Please refer to {@link Naive_RAG_Example} for a basic context.
+     * 基础背景请参见 {@link Naive_RAG_Example}。
      * <p>
      * Advanced RAG in LangChain4j is described here: https://github.com/langchain4j/langchain4j/pull/538
+     * LangChain4j 中的高级 RAG 说明见： https://github.com/langchain4j/langchain4j/pull/538
      * <p>
      * This example demonstrates how to use web search engine as an additional content retriever.
+     * 本示例演示如何将网页搜索引擎作为额外的内容检索器。
      * <p>
      * This example requires "langchain4j-web-search-engine-tavily" dependency.
+     * 本示例需要 "langchain4j-web-search-engine-tavily" 依赖。
      */
 
     public static void main(String[] args) {
@@ -57,6 +61,7 @@ public class _08_Advanced_RAG_Web_Search_Example {
     private static Assistant createAssistant() {
 
         // Let's create our embedding store content retriever.
+        // 创建嵌入存储内容检索器。
         EmbeddingModel embeddingModel = new BgeSmallEnV15QuantizedEmbeddingModel();
 
         EmbeddingStore<TextSegment> embeddingStore =
@@ -70,8 +75,10 @@ public class _08_Advanced_RAG_Web_Search_Example {
                 .build();
 
         // Let's create our web search content retriever.
+        // 创建网页搜索内容检索器。
         WebSearchEngine webSearchEngine = TavilyWebSearchEngine.builder()
                 .apiKey(System.getenv("TAVILY_API_KEY")) // get a free key: https://app.tavily.com/sign-in
+                // 获取免费 key：https://app.tavily.com/sign-in
                 .build();
 
         ContentRetriever webSearchContentRetriever = WebSearchContentRetriever.builder()
@@ -80,6 +87,7 @@ public class _08_Advanced_RAG_Web_Search_Example {
                 .build();
 
         // Let's create a query router that will route each query to both retrievers.
+        // 创建查询路由器，将每个查询路由到两个检索器。
         QueryRouter queryRouter = new DefaultQueryRouter(embeddingStoreContentRetriever, webSearchContentRetriever);
 
         RetrievalAugmentor retrievalAugmentor = DefaultRetrievalAugmentor.builder()

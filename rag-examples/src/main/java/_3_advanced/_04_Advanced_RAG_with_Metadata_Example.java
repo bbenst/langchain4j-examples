@@ -32,10 +32,13 @@ public class _04_Advanced_RAG_with_Metadata_Example {
 
     /**
      * Please refer to {@link Naive_RAG_Example} for a basic context.
+     * 基础背景请参见 {@link Naive_RAG_Example}。
      * <p>
      * Advanced RAG in LangChain4j is described here: https://github.com/langchain4j/langchain4j/pull/538
+     * LangChain4j 中的高级 RAG 说明见： https://github.com/langchain4j/langchain4j/pull/538
      * <p>
      * This example illustrates how to include document source and other metadata into the LLM prompt.
+     * 本示例演示如何将文档来源及其他元数据包含到 LLM 的提示词中。
      */
 
     public static void main(String[] args) {
@@ -43,7 +46,9 @@ public class _04_Advanced_RAG_with_Metadata_Example {
         Assistant assistant = createAssistant("documents/miles-of-smiles-terms-of-use.txt");
 
         // Ask "What is the name of the file where cancellation policy is defined?".
+        // 询问“定义取消政策的文件名是什么？”
         // Observe how "file_name" metadata entry was injected into the prompt.
+        // 观察“file_name”元数据项如何被注入到提示词中。
         startConversationWith(assistant);
     }
 
@@ -69,8 +74,10 @@ public class _04_Advanced_RAG_with_Metadata_Example {
                 .build();
 
         // Each retrieved segment should include "file_name" and "index" metadata values in the prompt
+        // 每个检索到的片段都应在提示词中包含 "file_name" 和 "index" 元数据值
         ContentInjector contentInjector = DefaultContentInjector.builder()
                 // .promptTemplate(...) // Formatting can also be changed
+                // .promptTemplate(...) // 也可以改变格式
                 .metadataKeysToInclude(asList("file_name", "index"))
                 .build();
 

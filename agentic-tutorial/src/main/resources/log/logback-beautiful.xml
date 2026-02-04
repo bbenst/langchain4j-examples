@@ -10,22 +10,26 @@
     </root>
 
     <!-- Allow HTTP logs to reach our appender, but at a lower level -->
+    <!-- 允许 HTTP 日志进入 appender，但降低级别 -->
     <logger name="dev.langchain4j.model.openai" level="DEBUG"/>
     <logger name="dev.langchain4j.http.client" level="DEBUG"/>
     <logger name="dev.langchain4j.http.client.log.LoggingHttpClient" level="DEBUG"/>
     
     <!-- Allow agent-related debug logs -->
+    <!-- 允许智能体相关的调试日志 -->
     <logger name="dev.langchain4j.agentic" level="DEBUG"/>
     <logger name="dev.langchain4j.agentic.supervisor" level="DEBUG"/>
     <logger name="dev.langchain4j.agentic.supervisor.SupervisorAgentServiceImpl" level="DEBUG"/>
 
     <!-- Turn off other noise -->
+    <!-- 关闭其他噪声 -->
     <logger name="okhttp3" level="OFF"/>
     <logger name="com.fasterxml.jackson" level="OFF"/>
     <logger name="ai.djl" level="OFF"/>
     <logger name="org.apache.tika" level="OFF"/>
     
     <!-- Turn off Logback's own logging -->
+    <!-- 关闭 Logback 自身日志 -->
     <logger name="ch.qos.logback" level="OFF"/>
     <logger name="ch.qos.logback.classic" level="OFF"/>
     <logger name="ch.qos.logback.core" level="OFF"/>

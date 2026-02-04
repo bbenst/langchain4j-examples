@@ -36,10 +36,13 @@ public class _07_Advanced_RAG_Multiple_Retrievers_Example {
 
     /**
      * Please refer to {@link Naive_RAG_Example} for a basic context.
+     * 基础背景请参见 {@link Naive_RAG_Example}。
      * <p>
      * Advanced RAG in LangChain4j is described here: https://github.com/langchain4j/langchain4j/pull/538
+     * LangChain4j 中的高级 RAG 说明见： https://github.com/langchain4j/langchain4j/pull/538
      * <p>
      * This example demonstrates how to use multiple content retrievers.
+     * 本示例演示如何使用多个内容检索器。
      */
 
     public static void main(String[] args) {
@@ -54,6 +57,7 @@ public class _07_Advanced_RAG_Multiple_Retrievers_Example {
         EmbeddingModel embeddingModel = new BgeSmallEnV15QuantizedEmbeddingModel();
 
         // Let's create our first content retriever.
+        // 创建第一个内容检索器。
         EmbeddingStore<TextSegment> embeddingStore1 =
                 embed(toPath("documents/miles-of-smiles-terms-of-use.txt"), embeddingModel);
         ContentRetriever contentRetriever1 = EmbeddingStoreContentRetriever.builder()
@@ -64,6 +68,7 @@ public class _07_Advanced_RAG_Multiple_Retrievers_Example {
                 .build();
 
         // Let's create our second content retriever.
+        // 创建第二个内容检索器。
         EmbeddingStore<TextSegment> embeddingStore2 =
                 embed(toPath("documents/biography-of-john-doe.txt"), embeddingModel);
         ContentRetriever contentRetriever2 = EmbeddingStoreContentRetriever.builder()
@@ -74,6 +79,7 @@ public class _07_Advanced_RAG_Multiple_Retrievers_Example {
                 .build();
 
         // Let's create a query router that will route each query to both retrievers.
+        // 创建一个查询路由器，将每个查询路由到两个检索器。
         QueryRouter queryRouter = new DefaultQueryRouter(contentRetriever1, contentRetriever2);
 
         RetrievalAugmentor retrievalAugmentor = DefaultRetrievalAugmentor.builder()

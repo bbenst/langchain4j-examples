@@ -10,6 +10,7 @@ import static org.springframework.http.MediaType.TEXT_EVENT_STREAM_VALUE;
 
 /**
  * This is an example of using an {@link AiService}, a high-level LangChain4j API.
+ * 这是使用 {@link AiService}（LangChain4j 的高级 API）的示例。
  */
 @RestController
 public class AssistantController {

@@ -10,6 +10,7 @@
     </root>
     
     <!-- Turn off HTTP noise -->
+    <!-- 关闭 HTTP 噪声 -->
     <logger name="dev.langchain4j.model.openai" level="OFF"/>
     <logger name="dev.langchain4j.http.client" level="OFF"/>
     <logger name="okhttp3" level="OFF"/>

@@ -36,6 +36,12 @@
 
         <dependency>
             <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-community-dashscope</artifactId>
+            <version>1.10.0-beta18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-cohere</artifactId>
             <version>1.10.0-beta18</version>
         </dependency>
@@ -67,6 +73,12 @@
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-embedding-store-filter-parser-sql</artifactId>
+            <version>1.10.0-beta18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-pgvector</artifactId>
             <version>1.10.0-beta18</version>
         </dependency>
 

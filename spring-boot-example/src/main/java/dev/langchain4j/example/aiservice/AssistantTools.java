@@ -11,6 +11,7 @@ public class AssistantTools {
 
     /**
      * This tool is available to {@link Assistant}
+     * 该工具可用于 {@link Assistant}
      */
     @Tool
     @Observed

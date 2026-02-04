@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * This is an example of using a {@link ChatModel}, a low-level LangChain4j API.
+ * 这是使用 {@link ChatModel}（LangChain4j 的底层 API）的示例。
  */
 @RestController
 public class ChatModelController {

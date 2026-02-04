@@ -70,6 +70,7 @@ public class AgenticScopePrinter {
         }
 
         String[] parts = conversation.split("(?m)(?=^User:|^\\w+\\s+agent:)"); // <-- fixed
+        // 修复后的分割规则
         StringBuilder sb = new StringBuilder();
 
         Pattern agentPattern = Pattern.compile("^(\\w+)\\s+agent:(.*)$", Pattern.DOTALL);

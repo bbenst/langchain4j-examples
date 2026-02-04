@@ -37,10 +37,13 @@ public class _09_Advanced_RAG_Return_Sources_Example {
 
     /**
      * Please refer to {@link Naive_RAG_Example} for a basic context.
+     * 基础背景请参见 {@link Naive_RAG_Example}。
      * <p>
      * Advanced RAG in LangChain4j is described here: https://github.com/langchain4j/langchain4j/pull/538
+     * LangChain4j 中的高级 RAG 说明见： https://github.com/langchain4j/langchain4j/pull/538
      * <p>
      * This example demonstrates how to return sources (retrieved contents).
+     * 本示例演示如何返回来源（检索到的内容）。
      */
 
     interface Assistant {
@@ -78,6 +81,7 @@ public class _09_Advanced_RAG_Return_Sources_Example {
     private static Assistant createAssistant() {
 
         // Let's create our embedding store content retriever.
+        // 创建嵌入存储内容检索器。
         EmbeddingModel embeddingModel = new BgeSmallEnV15QuantizedEmbeddingModel();
 
         EmbeddingStore<TextSegment> embeddingStore =
